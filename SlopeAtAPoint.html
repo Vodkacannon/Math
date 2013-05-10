@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+.button {
+  font-size: 16px;
+	vertical-align: middle;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+form:hover {
+	color: #000;
+}
+form {
+	color: #666;
+}
+</style>
+<script type="text/javascript">
+
+function calculate_slope(form){
+	
+	var func, x, slope, first_f_x, second_f_x
+	
+	x = parseFloat(form.x.value) + 0.00000000001
+	
+	first_f_x = eval(form.func.value)
+	
+	x = parseFloat(form.x.value)
+	
+	second_f_x = eval(form.func.value)
+	
+	form.slope.value = (first_f_x - second_f_x) / 0.00000000001
+
+}
+</script>
+</head>
+
+<body>
+<h2>Calculate the slope of a function at a point</h2>
+<form action="" method="get">
+
+<p>Function:</p>
+
+<input name="func" type="text" class="button" id="function" />
+
+<p>At x coordinate:</p>
+
+<input name="x" type="text" class="button" />
+
+<p>Slope:</p>
+
+<input name="slope" type="text" class="button" />
+
+<input type="button" class="button" value="Calculate" onClick="calculate_slope(this.form)" />
+</form>
+</body>
+</html>
